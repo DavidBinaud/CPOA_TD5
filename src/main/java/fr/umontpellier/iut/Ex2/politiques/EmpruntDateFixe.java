@@ -9,18 +9,28 @@ import java.time.LocalDate;
 
 public class EmpruntDateFixe implements PolitiqueEmprunt {
 
+    private int nbjours;
+
+    public EmpruntDateFixe(int nbjours) {
+        this.nbjours = nbjours;
+    }
+
+    private LocalDate calculAuxiliaire(){
+        return CalculDate.ajouter(nbjours);
+    }
+
     @Override
     public LocalDate calculerDateRetour(Livre livre) {
-        return CalculDate.ajouter(15);
+        return calculAuxiliaire();
     }
 
     @Override
     public LocalDate calculerDateRetour(CD cd) {
-        return CalculDate.ajouter(15);
+        return calculAuxiliaire();
     }
 
     @Override
     public LocalDate calculerDateRetour(Film film) {
-        return CalculDate.ajouter(15);
+        return calculAuxiliaire();
     }
 }
