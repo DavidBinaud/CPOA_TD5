@@ -4,6 +4,9 @@ import fr.umontpellier.iut.Ex2.documents.CD;
 import fr.umontpellier.iut.Ex2.documents.Document;
 import fr.umontpellier.iut.Ex2.documents.Film;
 import fr.umontpellier.iut.Ex2.documents.Livre;
+import fr.umontpellier.iut.Ex2.politiques.EmpruntDateFixe;
+import fr.umontpellier.iut.Ex2.politiques.EmpruntSelonTypeDoc;
+import fr.umontpellier.iut.Ex2.politiques.PolitiqueEmprunt;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,11 +24,6 @@ public class AppEmprunts {
         fonds.put("FI_SCO_1",new Film("Taxi Driver"));
     }
 
-    public static void gestionEmprunts(ArrayList<Document> listeDocuments){
-        for (Document d:listeDocuments) {
-            d.setDateRetour(CalculDate.ajouter(15));
-        }
-    }
 
     public static void main(String[] args) {
         constituerFonds();
@@ -36,10 +34,14 @@ public class AppEmprunts {
         panierDocument.add(fonds.get("CD_BEA_1"));
         panierDocument.add(fonds.get("FI_KUB_1"));
 
-        gestionEmprunts(panierDocument);
 
+        EmpruntDateFixe politiqueFixe = new EmpruntDateFixe(15);
+        EmpruntSelonTypeDoc politiqueType = new EmpruntSelonTypeDoc();
 
         for (Document d: panierDocument) {
+            d.emprunter(politiqueFixe);
+            System.out.println(d.toString());
+            d.emprunter(politiqueType);
             System.out.println(d.toString());
         }
     }
