@@ -1,7 +1,7 @@
-package fr.umontpellier.iut;
+package fr.umontpellier.iut.Ex1;
 
 import java.util.HashMap;
-import fr.umontpellier.iut.documents.Document;
+import fr.umontpellier.iut.Ex1.documents.Document;
 
 public class AppEmprunts {
 

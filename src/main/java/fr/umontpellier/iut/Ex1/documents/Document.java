@@ -1,4 +1,4 @@
-package fr.umontpellier.iut.documents;
+package fr.umontpellier.iut.Ex1.documents;
 
 import java.time.LocalDate;
 

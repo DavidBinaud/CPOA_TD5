@@ -29,7 +29,7 @@ Si on essaie de programmer la combinaison de toutes ces possibilités, on risque
 
 En premier lieu, on va mettre en place le code qui calcule les dates de retour de documents.
 
-1. La classe `Document` vous est donnée dans le package `fr.umontpellier.iut.documents`. Elle possède des attributs privés `titre` et `dateRetour`. Sauf indication contraire, vous ne devriez pas **modifier** les méthodes et les attributs de cette classe.
+1. La classe `Document` vous est donnée dans le package `fr.umontpellier.iut.Ex1.documents`. Elle possède des attributs privés `titre` et `dateRetour`. Sauf indication contraire, vous ne devriez pas **modifier** les méthodes et les attributs de cette classe.
    
    A partir de la classe `Document`, créez les classes correspondant aux livres, CD et films. Redéfinissez dans chacune de ces 3 classes la méthode `toString()` en évitant la duplication de code.
   
