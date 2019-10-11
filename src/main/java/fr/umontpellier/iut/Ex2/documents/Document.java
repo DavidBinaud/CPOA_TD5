@@ -1,8 +1,10 @@
 package fr.umontpellier.iut.Ex2.documents;
 
+import fr.umontpellier.iut.Ex2.politiques.PolitiqueEmprunt;
+
 import java.time.LocalDate;
 
-public class Document {
+public abstract class Document {
     private LocalDate dateRetour;
     private String titre;
 
@@ -14,7 +16,7 @@ public class Document {
         return dateRetour;
     }
 
-    public void setDateRetour(LocalDate dateRetour) {
+    protected void setDateRetour(LocalDate dateRetour) {
         this.dateRetour = dateRetour;
     }
 
@@ -27,4 +29,8 @@ public class Document {
         return "[titre = " + titre + ", " +
                 (dateRetour == null ? " non emprunté" : "Retour le " + dateRetour) + "]";
     }
+
+    //On est obligé de le réaliser dans les classes filles car on doit passer l'objet this
+    //et le passer depuis cette classe ferait qu'on ne pourrait pas faire la distinction entre ses classes filles
+    public abstract void emprunter(PolitiqueEmprunt p);
 }
