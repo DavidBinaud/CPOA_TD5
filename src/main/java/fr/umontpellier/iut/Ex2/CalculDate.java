@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class CalculDate {
 
-    static LocalDate ajouter(int nbJours){
+    public static LocalDate ajouter(int nbJours){
         return LocalDate.now().plusDays(nbJours);
     }
 }
